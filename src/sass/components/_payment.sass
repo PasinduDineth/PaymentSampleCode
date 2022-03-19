@@ -1,0 +1,90 @@
+.payment
+  align-items: center
+  display: flex
+  h5
+    text-align: center
+    margin-bottom: 50px
+  &__cardDetailsHolder
+    margin-left: 50px
+    @media (max-width: 991.98px)
+      margin-left: 0
+  &__cardDetails
+    margin-left: 50px
+    @media (max-width: 991.98px)
+      margin-left: 0
+    &__groupSet
+      display: flex
+      margin-bottom: 0
+      .payment__cardDetails__group
+          margin-left: 15px
+          &:first-child
+            margin-left: 0
+    &__group
+      label
+        font-size: .7rem
+        text-transform: uppercase
+        color: $complimentary_tertiary
+      &__inputSet
+        display: flex
+        .payment__cardDetails__group__input
+          margin-left: 15px
+          &:first-child
+            margin-left: 0
+      &__input
+        border: 0px !important
+        display: flex
+        overflow: hidden
+        background-color: #fff
+        box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px
+        &.--error
+          border-color: $status_error
+        &__logoDefault
+          justify-content: center
+          align-items: center
+          display: flex
+          padding: 0 0 0 10px
+          transform: translateY(-100%)
+          transition: transform 500ms ease-in
+          animation: expand .5s ease-in-out
+        &__logo
+          justify-content: center
+          align-items: center
+          display: flex
+          padding: 0 0 0 10px
+          transform: translateY(-100%)
+          transition: transform 500ms ease-in
+          animation: expand .5s ease-in-out
+          position: relative
+          &:after
+            content: ' '
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 10px
+            right: 0
+            transform: translateY(100%)
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 4h-20c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12c0-1.104-.896-2-2-2zm0 13.5c0 .276-.224.5-.5.5h-19c-.276 0-.5-.224-.5-.5v-6.5h20v6.5zm0-9.5h-20v-1.5c0-.276.224-.5.5-.5h19c.276 0 .5.224.5.5v1.5zm-9 6h-9v-1h9v1zm-3 2h-6v-1h6v1zm10-2h-3v-1h3v1z"/></svg>')
+            background-position: center
+            background-size: initial
+            background-repeat: no-repeat
+          &.--masterCard,
+          &.--amex,
+          &.--visa
+            transform: translateY(0%)
+        .form-control
+          border: 0
+          &:focus
+            outline: none
+            box-shadow: none
+  &__actions
+    margin-left: 50px
+    margin-top: 50px
+    text-align: right
+    &__actionButton
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px
+
+@keyframes expand
+  from
+    transform: scale(0)
+    opacity: 0
+    background: #5470B0
