@@ -1,5 +1,5 @@
 describe('My First Test', () => {
-    it('Visits the Kitchen Sink', () => {
+    it('Visits Sofa and test the fields', () => {
       cy.visit('http://localhost:3000/')
 
       cy.get('#card-number')
