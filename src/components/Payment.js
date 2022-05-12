@@ -269,7 +269,7 @@ class Payment extends Component{
                                         <label>Card Number</label>
                                         <div className={  `payment__cardDetails__group__input ${(this.state.errors.cardNumber ? '--error' : '')}` }>
                                             { getCardLogo }
-                                            <input value={this.state.cardNumber} className="form-control" type="text" onChange={this.cardNumberChanged} pattern="^-?[0-9]\d*\.?\d*$"/>
+                                            <input value={this.state.cardNumber} id="card-number" className="form-control" type="text" onChange={this.cardNumberChanged} pattern="^-?[0-9]\d*\.?\d*$"/>
                                         </div>
                                     </div>
                                     <div className="form-group payment__cardDetails__groupSet">
@@ -277,29 +277,29 @@ class Payment extends Component{
                                             <label>Expiry Date</label>
                                             <div className="payment__cardDetails__group__inputSet">
                                                 <div className={  `payment__cardDetails__group__input ${(this.state.errors.month ? '--error' : '')}` }>
-                                                    <input placeholder="Month" value={this.state.month} className="form-control" type="text" onChange={this.cardMonthChanged} pattern="^(0?[1-9]|1[012])$"/>
+                                                    <input placeholder="Month" id="card-month" value={this.state.month} className="form-control" type="text" onChange={this.cardMonthChanged} pattern="^(0?[1-9]|1[012])$"/>
                                                 </div>
                                                 <div className={  `payment__cardDetails__group__input ${(this.state.errors.year ? '--error' : '')}` }>
-                                                    <input placeholder="Year" value={this.state.year} className="form-control" type="text" onChange={this.cardYearChanged} pattern="^-?[0-9]\d*\.?\d*$"/>
+                                                    <input placeholder="Year" id="card-year" value={this.state.year} className="form-control" type="text" onChange={this.cardYearChanged} pattern="^-?[0-9]\d*\.?\d*$"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="form-group payment__cardDetails__group">
                                             <label>CVC</label>
                                             <div className={  `payment__cardDetails__group__input ${(this.state.errors.cvc ? '--error' : '')}` }>
-                                                <input value={this.state.cvc} className="form-control" type="text" pattern="^-?[0-9]\d*\.?\d*$" onChange={this.cvcChanged}/>
+                                                <input value={this.state.cvc} id="card-cvv" className="form-control" type="text" pattern="^-?[0-9]\d*\.?\d*$" onChange={this.cvcChanged}/>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="form-group payment__cardDetails__group">
                                         <label>Card Holder</label>
                                         <div className={  `payment__cardDetails__group__input ${(this.state.errors.name ? '--error' : '')}` }>
-                                            <input value={this.state.name} className="form-control" type="text" onChange={this.nameChanged}/>
+                                            <input value={this.state.name} id="card-name" className="form-control" type="text" onChange={this.nameChanged}/>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="payment__actions">
-                                    <a className='btn' onClick={this.checkout(context)}>Checkout</a>
+                                    <a className='btn' onClick={this.checkout(context)} id="checkout-button">Checkout</a>
                                 </div>
                             </div>
                         </div>
